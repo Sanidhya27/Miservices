@@ -1,0 +1,8 @@
+{%block content%}
+<form  action="/services/display" method="post">
+	{{form}}
+  
+{% csrf_token %}
+<input type="submit" value="ok" />
+</form>
+{%endblock%}
