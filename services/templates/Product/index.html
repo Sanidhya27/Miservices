@@ -1,6 +1,17 @@
 {%block content%}
+
 <form  action="/services/display" method="post">
-	{{form}}
+	{% for field in form %}
+    <div class="form-group">
+        <div >
+            <span class="text-danger la">{{ field.errors }}</span>
+        </div>
+        <label  >{{ field.label_tag }}</label>
+        <div class="col-sm-10">{{ field }}</div>
+    </div>
+{% endfor %}
+
+	
   
 {% csrf_token %}
 <input type="submit" value="ok" />
